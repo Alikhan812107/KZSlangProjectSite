@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #2b1e1a;
+    color: #f5e6d3;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #3b2a25;
+    padding: 18px 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5e6d3;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(135deg, #3b2a25, #5a4035);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+header h1 {
+    color: #d4af37;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1s ease;
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #3b2a25;
+    padding: 40px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    transition: all 0.4s ease;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+section h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    color: #d4af37;
+    transform: translateX(5px);
+}
+
+/* Reasons Grid */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.reason-card {
+    background: linear-gradient(145deg, #4a3329, #3d2a21);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.reason-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+}
+
+.reason-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.reason-card h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.reason-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Features List */
+.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(145deg, #4a3329, #3d2a21);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.features-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.features-list strong {
+    color: #d4af37;
+}
+
+/* Sources List */
+.sources-list {
+    padding-left: 25px;
+}
+
+.sources-list li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #d4af37;
+}
+
+.sources-list strong {
+    color: #d4af37;
+}
+
+/* Comparison Table */
+.comparison-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.comparison-item {
+    background: linear-gradient(145deg, #4a3329, #3d2a21);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transition: all 0.4s ease;
+}
+
+.comparison-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+}
+
+.comparison-item h3 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.comparison-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comparison-item ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(212,175,55,0.1);
+    border-radius: 8px;
+}
+
+.conclusion-section {
+    background: linear-gradient(135deg, #4a3329, #3b2a25);
+    border: 2px solid #d4af37;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #3b2a25;
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+        padding: 0 15px;
+    }
+    section {
+        padding: 25px;
+    }
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+    .comparison-table {
+        grid-template-columns: 1fr;
+    }
+}
